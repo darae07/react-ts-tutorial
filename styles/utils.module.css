@@ -50,3 +50,16 @@
 .lightText {
   color: #666;
 }
+
+.post{
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 10px;
+  font-size: small;
+  padding: 7px 15px;
+  margin: 10px 0;
+}
+
+.username{
+  font-size: small;
+  font-weight: 700;
+}

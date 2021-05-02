@@ -5,53 +5,43 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import { GetStaticProps } from 'next'
+import { QueryClient, useQuery } from 'react-query'
+import { dehydrate } from 'react-query/hydration'
+import { getPosts } from "../controllers/posts";
 
-export default function Home({ 
-  allPostsData 
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) {
+export default function Home() {
+  const { data } = useQuery('posts', getPosts)
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+        <p>함께앳홈 타임라인</p>
+        {data.posts && data.posts.map(post => <div className={utilStyles.post} key={post.postKey}>
+          <p className={utilStyles.username}>{post.user.userName}</p>
+          {post.contents && post.contents.map(content => {
+            if (content.contentType === 1) {
+              return <p key={content.contentKey}>{content.contentText}</p>
+            }
+          })}
+        </div>)}
       </section>
     </Layout>
   )
 }
 
+// This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
+  // Call an external API endpoint to get data
+
+  const queryClient = new QueryClient();
+  let a = await queryClient.prefetchQuery('posts', getPosts)
+  console.log(a)
+
+   return {
+     props: {
+       dehydratedState: dehydrate(queryClient),
+     }
+   }
 }
