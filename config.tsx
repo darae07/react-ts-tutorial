@@ -1,1 +1,0 @@
-export const API = "https://t-api.athome.hamggae.com"
