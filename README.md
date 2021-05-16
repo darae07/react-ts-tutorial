@@ -2,6 +2,14 @@
 
 # 용컴 주니어 개발자들의 ts + react 공부를 위한 저장소 입니다.
 
+## 시작하기
+- env파일을 넣습니다. (케이시에게 요청)
+- npm install: 의존성 모듈들을 설치합니다.
+- npm run dev: 개발자모드로 앱을 실행합니다.
+
+### env
+- next.js는 NEXT_PUBLIC_로 시작하는 변수명을 가집니다.
+
 ## next-js
 - next.js는 pages 폴더 내부의 js, jsx, ts, tsx 파일을 페이지라는 react component로 변환한다. 변환된 페이지는 모두 정적 html 엘리먼트로 pre-render된다. (두가지 타입중 선택 가능)
 - 예제) 'pages/about.js' 는 주소 '/about'으로 접속 가능하다.

@@ -37,7 +37,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const queryClient = new QueryClient();
   let a = await queryClient.prefetchQuery('posts', getPosts)
-  console.log(a)
 
    return {
      props: {
