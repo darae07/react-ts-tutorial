@@ -7,12 +7,9 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import '../styles/global.css'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const queryClientRef = React.useRef();
-  if (!queryClientRef.current) {
-    queryClientRef.current = new QueryClient();
-  }
+  const queryClient = new QueryClient();
   return (
-    <QueryClientProvider client={queryClientRef.current}>
+    <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <Component {...pageProps} />
         <ReactQueryDevtools />
