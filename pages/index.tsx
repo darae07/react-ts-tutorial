@@ -9,8 +9,9 @@ import { QueryClient, useQuery } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import { getPosts } from "../controllers/posts";
 
-export default function Home() {
+export default function Home({history}) {
   const { data } = useQuery('posts', getPosts)
+
   return (
     <Layout home>
       <Head>
@@ -18,14 +19,16 @@ export default function Home() {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>함께앳홈 타임라인</p>
-        {data.posts && data.posts.map(post => <div className={utilStyles.post} key={post.postKey}>
+        {data.posts && data.posts.map(post => <Link href={`posts/${encodeURIComponent(post.postKey)}`} key={post.postKey}>
+          <div className={utilStyles.post}>
           <p className={utilStyles.username}>{post.user.userName}</p>
           {post.contents && post.contents.map(content => {
             if (content.contentType === 1) {
               return <p key={content.contentKey}>{content.contentText}</p>
             }
           })}
-        </div>)}
+          </div>
+        </Link>)}
       </section>
     </Layout>
   )
