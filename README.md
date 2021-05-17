@@ -5,6 +5,8 @@
 ## 시작하기
 - env파일을 넣습니다. (케이시에게 요청)
 - npm install: 의존성 모듈들을 설치합니다.
+- npm install 에러 발생 시: npm audit로 문제 확인 후 해당 패키지를 설치합니다.
+- npm install remark@13.0.0 수동 설치 권장
 - npm run dev: 개발자모드로 앱을 실행합니다.
 
 ### env
