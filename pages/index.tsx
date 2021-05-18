@@ -19,7 +19,7 @@ export default function Home({history}) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>함께앳홈 타임라인</p>
+        
         {/* {data.posts && data.posts.map(post => <Link href={`posts/${encodeURIComponent(post.postKey)}`} key={post.postKey}>
           <div className={utilStyles.post}>
           <p className={utilStyles.username}>{post.user.userName}</p>
