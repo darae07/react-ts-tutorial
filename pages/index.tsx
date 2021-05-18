@@ -10,16 +10,17 @@ import { dehydrate } from 'react-query/hydration'
 import { getPosts } from "../controllers/posts";
 
 export default function Home({history}) {
-  const { data } = useQuery('posts', getPosts)
+  // const { data } = useQuery('posts', getPosts)
 
   return (
     <Layout home>
       <Head>
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
         <p>함께앳홈 타임라인</p>
-        {data.posts && data.posts.map(post => <Link href={`posts/${encodeURIComponent(post.postKey)}`} key={post.postKey}>
+        {/* {data.posts && data.posts.map(post => <Link href={`posts/${encodeURIComponent(post.postKey)}`} key={post.postKey}>
           <div className={utilStyles.post}>
           <p className={utilStyles.username}>{post.user.userName}</p>
           {post.contents && post.contents.map(content => {
@@ -28,7 +29,7 @@ export default function Home({history}) {
             }
           })}
           </div>
-        </Link>)}
+        </Link>)} */}
       </section>
     </Layout>
   )
@@ -39,7 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
   // Call an external API endpoint to get data
 
   const queryClient = new QueryClient();
-  let a = await queryClient.prefetchQuery('posts', getPosts)
+  // let a = await queryClient.prefetchQuery('posts', getPosts)
 
    return {
      props: {

@@ -3,9 +3,10 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import SearchForm from "./searchForm"
 
-const name = '함께앳홈'
-export const siteTitle = 'Next.js Sample Website'
+const name = '멜론 클론코딩'
+export const siteTitle = '멜론 클론코딩'
 
 export default function Layout({ children, home }: {
   children: React.ReactNode
@@ -29,39 +30,49 @@ export default function Layout({ children, home }: {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        {home ? (
-          <>
+        <div className={styles.gnb}>
+          <div className={styles.util_menu}>
+            <div className={styles.top_left}>
+              <ul>
+                <li><a><span>멜론 티켓</span></a></li>
+              </ul>
+            </div>
+            <div className={styles.top_right}>
+              <ul>
+                <li><a><span>이용권구매</span></a></li>
+                <li><a><span>멜론혜택관</span></a></li>
+                <li><a><span>이벤트</span></a></li>
+                <li><a><span>공지사항</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.util_cont}>
             <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
+              src="/images/logo_melon142x99.png"
+              height={99}
+              width={142}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
+            <SearchForm/>
+            <div><span>급상승</span></div>
+            <div><span>배너영역</span></div>
+          </div>
+
+        </div>
+        <div className={styles.gnb_menu} id="gnb_menu">
+          <ul>
+            <li><a>멜론차트</a></li>
+            <li><a>최신음악</a></li>
+            <li><a>장르음악</a></li>
+            <li><a>멜론DJ</a></li>
+            <li><a>멜론TV</a></li>
+            <li><a>스타포스트</a></li>
+            <li><a>매거진</a></li>
+            <li><a>뮤직어워드</a></li>
+          </ul>
+          <ul>
+            <li><a>마이뮤직</a></li>
+          </ul>
+        </div>
       </header>
       <main>{children}</main>
       {!home && (
