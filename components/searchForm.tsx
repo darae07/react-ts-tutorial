@@ -21,21 +21,39 @@ export default function SearchForm(){
     </div>
   )
 }
-
+interface cse_thumbnail{
+  src: string,
+  width: string,
+  height: string,
+}
 interface Item{
   title: string,
   cacheId?: string,
+  htmlSnippet?: string,
+  pagemap?: {
+    cse_thumbnail?: cse_thumbnail[]
+  }
 }
 function SearchResult({items}: {
   items: Item[] | null
 }){
+  console.log(items)
   if(!items) return null
   return (
     <div className={styles.search_result}>
       {items.map(item => (
-      <div key={item.cacheId}>
-        <p>{item.title}</p>
-      </div>
+        <div key={item.cacheId} className={styles.item}>
+          <div className={styles.img_box}>
+            {item.pagemap && item.pagemap.cse_thumbnail ?
+              <img className={styles.thum} src={item.pagemap.cse_thumbnail[0].src}></img>
+              : <div className={styles.thum}></div>}
+          </div>
+
+          <div>
+            <p className={styles.title}>{item.title}</p>
+            <p className={styles.text}>{item.htmlSnippet}</p>
+          </div>
+        </div>
       ))}
     </div>
   )
