@@ -10,17 +10,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 3px;
+    margin-left: 5px;
 }
 .top_bar ul{
     display: flex;
 }
 .top_bar ul li{
-    font-size: 14px;
+    font-size: 12px;
     color: #787d86;
 }
 .top_bar ul li span{
     border-right: 1px solid #bababa;
-    padding: 0 8px;
+    padding: 0 7px;
 }
 .top_bar ul li:last-child span{
     border-right: none;
@@ -30,14 +32,14 @@
 }
 
 .num{
-    margin-left: 30px;
+    margin-left: 25px;
 }
 .icon {
     margin-left: 8px;
 }
 .icon a{
     border: 1px solid #d9d9d9;
-    padding: 1px 8px;
+    padding: 1px 7px;
     color: #777777;
 }
 .icon a:first-child{
@@ -45,4 +47,25 @@
 }
 .icon a:last-child{
     border-radius: 0 10px 10px 0;
+}
+.thum{
+    position: relative;
+    display: inline;
+    float: left;
+    width: 154px;
+    height: 154px;
+    margin: 3px 0 0 4px;
+    padding: 0;
+    background-color: #eef1f4;
+}
+.singer{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 0;
+    font-weight: 200;
+    text-align: center;
+    width: 154px;
+    color: white;
 }

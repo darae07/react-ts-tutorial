@@ -22,6 +22,11 @@ export function NewAlbum(){
 
       <div>
         <AlbumItem item={null}/>
+        <AlbumItem item={null}/>
+        <AlbumItem item={null}/>
+        <AlbumItem item={null}/>
+        <AlbumItem item={null}/>
+        <AlbumItem item={null}/>
       </div>
 
     </div>
@@ -35,9 +40,9 @@ function AlbumItem({item}: {
 }){
   if(!item){
     return(
-      <div>
+      <div className={styles.thum}>
         <div></div>
-        <div>singer</div>
+        <div className={styles.singer}>singer</div>
       </div>
     )
   }
