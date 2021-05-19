@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
+import styles from '../components/layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
@@ -8,6 +9,7 @@ import { GetStaticProps } from 'next'
 import { QueryClient, useQuery } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import { getPosts } from "../controllers/posts";
+import {NewAlbum} from "../components/main";
 
 export default function Home({history}) {
   // const { data } = useQuery('posts', getPosts)
@@ -18,8 +20,10 @@ export default function Home({history}) {
         <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        
+      <section className={styles.conts_section}>
+        <div className={styles.conts}>
+        <NewAlbum/>
+        </div>
         {/* {data.posts && data.posts.map(post => <Link href={`posts/${encodeURIComponent(post.postKey)}`} key={post.postKey}>
           <div className={utilStyles.post}>
           <p className={utilStyles.username}>{post.user.userName}</p>

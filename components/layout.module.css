@@ -9,7 +9,11 @@
   height: 192px;
   z-index: 20;
 }
-
+.header_wrap {
+  width: 1008px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 .backToHome {
   margin: 3rem 0 0;
 }
@@ -27,14 +31,15 @@
 }
 
 .conts{
-  position: relative;
+  /* position: relative;
   z-index: 10;
   display: inline-block;
-  display: block;
-  width: 1008px;
-  min-height: 800px;
+  display: block; */
+  /* min-height: 800px; */
   padding: 30px 0 0 0;
-  zoom: 1;
+  /* zoom: 1; */
+  width: 1008px;
+  margin: 0 auto;
 }
 .gnb{
 }

@@ -30,48 +30,51 @@ export default function Layout({ children, home }: {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <div className={styles.gnb}>
-          <div className={styles.util_menu}>
-            <div className={styles.top_left}>
-              <ul>
-                <li><a><span>멜론 티켓</span></a></li>
-              </ul>
+        <div className={styles.header_wrap}>
+          <div className={styles.gnb}>
+            <div className={styles.util_menu}>
+              <div className={styles.top_left}>
+                <ul>
+                  <li><a><span>멜론 티켓</span></a></li>
+                </ul>
+              </div>
+              <div className={styles.top_right}>
+                <ul>
+                  <li><a><span>이용권구매</span></a></li>
+                  <li><a><span>멜론혜택관</span></a></li>
+                  <li><a><span>이벤트</span></a></li>
+                  <li><a><span>공지사항</span></a></li>
+                </ul>
+              </div>
             </div>
-            <div className={styles.top_right}>
-              <ul>
-                <li><a><span>이용권구매</span></a></li>
-                <li><a><span>멜론혜택관</span></a></li>
-                <li><a><span>이벤트</span></a></li>
-                <li><a><span>공지사항</span></a></li>
-              </ul>
+            <div className={styles.util_cont}>
+              <Image
+                src="/images/logo_melon142x99.png"
+                height={99}
+                width={142}
+              />
+              <SearchForm />
+              <div><span>급상승</span></div>
+              <div><span>배너영역</span></div>
             </div>
+
           </div>
-          <div className={styles.util_cont}>
-            <Image
-              src="/images/logo_melon142x99.png"
-              height={99}
-              width={142}
-            />
-            <SearchForm/>
-            <div><span>급상승</span></div>
-            <div><span>배너영역</span></div>
+          <div className={styles.gnb_menu} id="gnb_menu">
+            <ul>
+              <li><a>멜론차트</a></li>
+              <li><a>최신음악</a></li>
+              <li><a>장르음악</a></li>
+              <li><a>멜론DJ</a></li>
+              <li><a>멜론TV</a></li>
+              <li><a>스타포스트</a></li>
+              <li><a>매거진</a></li>
+              <li><a>뮤직어워드</a></li>
+            </ul>
+            <ul>
+              <li><a>마이뮤직</a></li>
+            </ul>
           </div>
 
-        </div>
-        <div className={styles.gnb_menu} id="gnb_menu">
-          <ul>
-            <li><a>멜론차트</a></li>
-            <li><a>최신음악</a></li>
-            <li><a>장르음악</a></li>
-            <li><a>멜론DJ</a></li>
-            <li><a>멜론TV</a></li>
-            <li><a>스타포스트</a></li>
-            <li><a>매거진</a></li>
-            <li><a>뮤직어워드</a></li>
-          </ul>
-          <ul>
-            <li><a>마이뮤직</a></li>
-          </ul>
         </div>
       </header>
       <main>{children}</main>

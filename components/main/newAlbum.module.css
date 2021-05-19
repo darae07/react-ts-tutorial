@@ -1,0 +1,48 @@
+.new_album {
+    position: relative;
+    z-index: 5;
+    width: 476px;
+    height: 340px;
+    float: left;
+}
+
+.top_bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top_bar ul{
+    display: flex;
+}
+.top_bar ul li{
+    font-size: 14px;
+    color: #787d86;
+}
+.top_bar ul li span{
+    border-right: 1px solid #bababa;
+    padding: 0 8px;
+}
+.top_bar ul li:last-child span{
+    border-right: none;
+}
+.section_na{
+    display: flex;
+}
+
+.num{
+    margin-left: 30px;
+}
+.icon {
+    margin-left: 8px;
+}
+.icon a{
+    border: 1px solid #d9d9d9;
+    padding: 1px 8px;
+    color: #777777;
+}
+.icon a:first-child{
+    border-radius: 10px 0 0 10px;
+}
+.icon a:last-child{
+    border-radius: 0 10px 10px 0;
+}
