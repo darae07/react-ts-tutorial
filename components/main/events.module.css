@@ -1,0 +1,24 @@
+.events_list{
+    position: relative;
+    overflow: hidden;
+    width: 236px;
+    height: 315px;
+    display: flex;
+    margin-top: 33px;
+}
+.events_list img{
+    width: 236px;
+    height: 315px;
+    position: absolute;
+    animation-name: scrol;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+@keyframes scrol {
+    0% {
+        left: -300px
+    }
+    100%{
+        left: 0;
+    }
+}
