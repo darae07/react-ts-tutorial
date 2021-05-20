@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from "./searchForm.module.css"
 import {useQuery} from "react-query";
 import {getSearch} from "../controllers/search"
@@ -10,14 +10,19 @@ export default function SearchForm(){
   }
 
   const searchQuery = useQuery(['search', searchText], getSearch);
-
+  const [searchResultOpen, setSearchResultOpen] = useState(false);
+  const closeResult = () => setSearchResultOpen(false);
   return (
     <div>
       <div className={styles.search}>
-        <input className={styles.search_input} value={searchText} onChange={onChange} />
+        <input className={styles.search_input}
+          value={searchText}
+          onChange={onChange}
+          onClick={() => setSearchResultOpen(true)}
+        />
         <span className={styles.search_icon}><i className="fas fa-search fa-sm"></i></span>
       </div>
-      {searchQuery.data && <SearchResult items={searchQuery.data.items}/>}
+      {(searchQuery.data && searchResultOpen) && <SearchResult items={searchQuery.data.items} closeResult={closeResult}/>}
     </div>
   )
 }
@@ -34,13 +39,25 @@ interface Item{
     cse_thumbnail?: cse_thumbnail[]
   }
 }
-function SearchResult({items}: {
-  items: Item[] | null
+function SearchResult({ items, closeResult }: {
+  items: Item[] | null,
+  closeResult: () => void
 }){
-  console.log(items)
   if(!items) return null
+
+  const show = useRef(null);
+  const handleClickOutside = ({target}) => {
+    if(show.current && !show.current.contains(target)) closeResult()
+  }
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={styles.search_result}>
+    <div className={styles.search_result} ref={show}>
       {items.map(item => (
         <div key={item.cacheId} className={styles.item}>
           <div className={styles.img_box}>
