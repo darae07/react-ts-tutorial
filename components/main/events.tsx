@@ -3,7 +3,15 @@ import styles from "./events.module.css";
 export function Events(){
   return(
      <div className={styles.events}>
-       <div></div>
+       <div className={styles.events_controles}>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+       </div>
        <div className={styles.events_list}>
          <ul>
            <li><img src="images/events/1.png"/></li>
