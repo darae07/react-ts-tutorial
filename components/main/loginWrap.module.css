@@ -1,0 +1,52 @@
+.id_wrap {
+    width: 280px;
+    margin-left: 8px;
+    height: 316px;
+    display: inline-block;
+    margin-top: 36px;
+}
+.login_wrap {
+    position: relative;
+    width: 280px;
+    height: 119px;
+}
+.button_login {
+    height: 115px;
+    padding: 0 17px;
+    border: 1px solid #e0e0e0;
+    background: #fbfbfb;
+    text-align: center;
+}
+.top_area {
+    padding: 24px 0 7px;
+    overflow: hidden;
+}
+.top_area p {
+    float: left;
+    color: #939393;
+    font-size: 11px;
+    letter-spacing: -0.5px;
+}
+.top_area a {
+    float: right;
+    color: #818181;
+    font-size: 11px;
+    letter-spacing: -0.5px;
+}
+.button_login .btn_login {
+    width: 100%;
+    height: 42px;
+    background-color: #00d344;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    font-family: AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif;
+}
+.promotion_wrap {
+    position: relative;
+    width: 280px;
+    height: 188px;
+    margin-top: 8px;
+    background-color: #eef1f4;
+    /* background: url(//cdnimg.melon.co.kr/resource/image/web/main/artist_loading.jpg) no-repeat 0 0; */
+}

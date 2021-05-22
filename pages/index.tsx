@@ -9,7 +9,7 @@ import { GetStaticProps } from 'next'
 import { QueryClient, useQuery } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import { getPosts } from "../controllers/posts";
-import {NewAlbum, Events} from "../components/main";
+import {NewAlbum, Events, LoginWrap} from "../components/main";
 
 export default function Home({history}) {
   // const { data } = useQuery('posts', getPosts)
@@ -24,6 +24,7 @@ export default function Home({history}) {
         <div className={styles.conts}>
         <NewAlbum/>
         <Events/>
+        <LoginWrap/>
         </div>
         {/* {data.posts && data.posts.map(post => <Link href={`posts/${encodeURIComponent(post.postKey)}`} key={post.postKey}>
           <div className={utilStyles.post}>

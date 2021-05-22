@@ -1,24 +1,70 @@
+.events{
+    margin: 0 0 0 8px;
+    display: inline-block;
+}
+.events_controles{
+    padding: 15px 0 5px 62%;
+    height: 37px;
+    display: flex;
+}
+.events_controles div{
+    width: 10px;
+    height: 10px;
+    border: 1px solid#bfbfbf;
+    border-radius: 5px;
+    margin-left: 3px;
+    animation:on 16s infinite;
+}
 .events_list{
     position: relative;
     overflow: hidden;
     width: 236px;
-    height: 315px;
+    height: 311px;
     display: flex;
-    margin-top: 33px;
+    /* margin-top: 37px; */
 }
 .events_list img{
     width: 236px;
     height: 315px;
-    position: absolute;
-    animation-name: scrol;
-    animation-duration: 4s;
-    animation-delay: 2s;
 }
-@keyframes scrol {
-    0% {
-        left: -300px
-    }
-    100%{
-        left: 0;
-    }
+.events_list ul{
+    /* width: calc(100% * 7); */
+    display:flex;
+    animation:slide 16s infinite;
 }
+.events_list li{
+    /* width: calc(100% / 7); */
+    width: 236px;
+}
+@keyframes slide{
+    0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+    5% {margin-left:0;} /* 10 ~ 25 : 변이 */
+    10% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+    15% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+    25% {margin-left:-200%;}
+    30% {margin-left:-200%;}
+    40% {margin-left:-300%;}
+    45% {margin-left:-300%;}
+    55% {margin-left:-400%;}
+    60% {margin-left:-400%;}
+    70% {margin-left:-500%;}
+    75% {margin-left:-500%;}
+    85% {margin-left:-600%;}
+    90% {margin-left:-600%;}
+    100% {margin-left:0;}
+}
+@keyframes on {
+    0%{border: 1px solid #333333;}
+    10%{border: 1px solid #bfbfbf;}
+    85%{border: 1px solid #bfbfbf;}
+    100%{border: 1px solid #333333;}
+}
+
+.events_controles div:nth-child(1){animation-delay: 0s;}
+.events_controles div:nth-child(2){animation-delay: 2.25s;}
+.events_controles div:nth-child(3){animation-delay: 4.5s;}
+.events_controles div:nth-child(4){animation-delay: 6.75s;}
+.events_controles div:nth-child(5){animation-delay: 9s;}
+.events_controles div:nth-child(6){animation-delay: 11.25s;}
+.events_controles div:nth-child(7){animation-delay: 13.5s;}
+/* .events_controles div:nth-child(6){animation-delay: 14s;} */
