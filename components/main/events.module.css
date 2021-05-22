@@ -1,24 +1,42 @@
+.events{
+    margin: 0 0 0 8px;
+    display: inline-block;
+}
 .events_list{
     position: relative;
     overflow: hidden;
     width: 236px;
-    height: 315px;
+    height: 311px;
     display: flex;
-    margin-top: 33px;
+    margin-top: 37px;
 }
 .events_list img{
     width: 236px;
     height: 315px;
-    position: absolute;
-    animation-name: scrol;
-    animation-duration: 4s;
-    animation-delay: 2s;
 }
-@keyframes scrol {
-    0% {
-        left: -300px
-    }
-    100%{
-        left: 0;
-    }
+.events_list ul{
+    /* width: calc(100% * 7); */
+    display:flex;
+    animation:slide 16s infinite;
+}
+.events_list li{
+    /* width: calc(100% / 7); */
+    width: 236px;
+}
+@keyframes slide{
+    0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+    5% {margin-left:0;} /* 10 ~ 25 : 변이 */
+    10% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+    15% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+    25% {margin-left:-200%;}
+    30% {margin-left:-200%;}
+    40% {margin-left:-300%;}
+    45% {margin-left:-300%;}
+    55% {margin-left:-400%;}
+    60% {margin-left:-400%;}
+    70% {margin-left:-500%;}
+    75% {margin-left:-500%;}
+    85% {margin-left:-600%;}
+    90% {margin-left:-600%;}
+    100% {margin-left:0;}
 }
