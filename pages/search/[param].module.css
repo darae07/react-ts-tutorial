@@ -53,3 +53,99 @@
   color: #31cb84;
   border-bottom: 1px solid  #31cb84;
 }
+.cont_wrap{
+  margin: 0 auto;
+  background: 0;
+}
+
+.conts_section{
+  padding: 0 20px;
+  margin: 0 auto;
+  position: relative;
+  width: 1008px;
+}
+
+.conts{
+  padding: 30px 0 0 0;
+  width: 1008px;
+  margin: 0 auto;
+}
+.search_phrse {
+  padding: 29px 0 8px;
+}
+.search_phrse p {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;
+}
+.fc_serch {
+  color: #7cb710 !important;
+}
+.wrap_tab03 {
+  position: relative;
+  background-color: #ebf0ed;
+  height: 40px;
+}
+.wrap_tab03 ul {
+  position: relative;
+  width: 1008px;
+  border-top: 2px solid #848484;
+  border-bottom: 1px solid #dbdbdb;
+}
+.wrap_tab03 ul li {
+  float: left;
+  background-color: #ebf0ed;
+  width: 11.1%;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #d9d9d9;
+  font-size: 13px;
+  padding: 10px 4px;
+  text-align: center;
+}
+.wrap_tab03 ul li:first{
+  width: 11.2%;
+}
+.wrap_cntt {
+  padding: 16px 0 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+.wrap_cntt img{
+  width: 208px;
+  height: 208px;
+}
+.section h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;
+}
+.atist_dtl_info {
+  float: left;
+  width: 100%;
+  min-height: 240px;
+  margin-left: 24px;
+  /* padding: 0 24px 19px 0; */
+}
+.info_01 {
+  height: 37px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.info_02 {
+  margin-top: 10px;
+}
+.info_02 p {
+  font-size: 12px;
+}
+.d_artist_list {
+  font-size: 18px;
+  line-height: 30px;
+  font-family: "맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;
+  color: #7cb710 !important;
+  text-decoration: underline !important;
+}

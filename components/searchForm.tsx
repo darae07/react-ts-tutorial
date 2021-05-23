@@ -19,6 +19,7 @@ export default function SearchForm({param}: {
   const searchQuery = useQuery(['search', searchText], getSearch);
   const [searchResultOpen, setSearchResultOpen] = useState(false);
   const closeResult = () => setSearchResultOpen(false);
+
   return (
     <div>
       <div className={styles.search}>
@@ -71,8 +72,9 @@ function SearchResult({ items, closeResult, searchText }: {
   return (
     <div className={styles.search_result} ref={show}>
       {items.map(item => (
-        <Link href={`/search/${encodeURIComponent(searchText)}?cacheId=${encodeURIComponent(item.cacheId)}`} key={item.cacheId}>
-          <div className={styles.item}>
+        <Link href={`/search/${encodeURIComponent(searchText)}?cacheId=${encodeURIComponent(item.cacheId)}`} 
+        key={item.cacheId}>
+          <div className={styles.item} onClick={closeResult}>
             <div className={styles.img_box}>
               {item.pagemap && item.pagemap.cse_thumbnail ?
                 <img className={styles.thum} src={item.pagemap.cse_thumbnail[0].src}></img>

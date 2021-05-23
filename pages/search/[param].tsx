@@ -10,11 +10,11 @@ export default function Search(){
   const router = useRouter();
   const {param, cacheId} = router.query;
  
-  // const searchQueryData = useQuery(['search', param], getSearch);
+  const searchQueryData = useQuery(['search', param], getSearch);
 
-  // const searchData = searchQueryData.data && searchQueryData.data.items ?
-  //   searchQueryData.data.items.find(item => item.cacheId === cacheId)
-  //   : null
+  const searchData = searchQueryData.data && searchQueryData.data.items ?
+    searchQueryData.data.items.find(item => item.cacheId === cacheId)
+    : null
 
   return (
     <div>
@@ -44,16 +44,49 @@ export default function Search(){
             height={99}
             width={142}
           />
-          {/* <SearchForm param={typeof param === 'string' ? param : ''} /> */}
+          <SearchForm param={typeof param === 'string' ? param : ''} />
         </div>
       </header>
 
-      <p>{cacheId}</p>
-      {searchData && <div>
-        <p>{searchData.title}</p>
-      </div>}
-      {/* {searchData && <p>{searchData.title}</p>} */}
-      {/* {searchData && searchData.items} */}
+      <div className={styles.cont_wrap}>
+        <div className={styles.conts_section}>
+          <div className={styles.conts}>
+            <div className={styles.search_phrse}>
+              <p><strong className={styles.fc_serch}>'{param}'</strong>에 대한 검색 결과입니다.</p>
+            </div>
+            <div className={styles.wrap_tab03}>
+              <ul>
+                <li>통합검색</li>
+                <li>아티스트</li>
+                <li>곡</li>
+                <li>앨범</li>
+                <li>영상</li>
+                <li>가사</li>
+                <li>DJ플레이리스트</li>
+                <li>멜론매거진</li>
+                <li>고객지원</li>
+              </ul>
+            </div>
+
+            <section className={styles.section}>
+              <h3>통합검색</h3>
+              {searchData && <div className={styles.wrap_cntt}>
+                {searchData.pagemap.cse_thumbnail &&
+                  <img src={searchData.pagemap.cse_thumbnail[0].src} alt="" />}
+                <div className={styles.atist_dtl_info}>
+                  <div className={styles.info_01}>
+                    <span className={styles.d_artist_list}>{searchData.title}</span>
+                  </div>
+                  <div className={styles.info_02}>
+                    <p>{searchData.snippet}</p>
+                  </div>
+                </div>
+              </div>}
+
+            </section>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
