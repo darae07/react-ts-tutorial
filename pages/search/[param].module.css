@@ -1,0 +1,15 @@
+.header {
+  border-top: 4px solid #31cb84;
+  border-bottom: 1px solid #999999;
+  position: relative;
+  width: 100%;
+  min-width: 1048px;
+  height: 192px;
+  z-index: 20;
+}
+
+.util_cont{
+  width: 1008px;
+  margin: 0 auto;
+  display: flex;
+}
