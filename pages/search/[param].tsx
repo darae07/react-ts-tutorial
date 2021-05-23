@@ -19,6 +19,25 @@ export default function Search(){
   return (
     <div>
       <header className={styles.header}>
+        <div className={styles.gnb}>
+          <div className={styles.gnb_mini_menu}>
+            <div className={styles.wrap_gnb_more}>
+              <ul>
+                <li>멜론차트</li>
+                <li>최신음악</li>
+                <li>장르음악</li>
+                <li>멜론DJ</li>
+                <li>멜론TV</li>
+                <li>스타포스트</li>
+                <li>매거진</li>
+                <li>마이뮤직</li>
+              </ul>
+            </div>
+            <div className={styles.header_login}>
+              <span>로그인</span>
+            </div>
+          </div>
+        </div>
         <div className={styles.util_cont}>
           <Image
             src="/images/logo_melon142x99.png"
@@ -29,12 +48,45 @@ export default function Search(){
         </div>
       </header>
 
-      <p>{cacheId}</p>
-      {searchData && <div>
-        <p>{searchData.title}</p>
-      </div>}
-      {/* {searchData && <p>{searchData.title}</p>} */}
-      {/* {searchData && searchData.items} */}
+      <div className={styles.cont_wrap}>
+        <div className={styles.conts_section}>
+          <div className={styles.conts}>
+            <div className={styles.search_phrse}>
+              <p><strong className={styles.fc_serch}>'{param}'</strong>에 대한 검색 결과입니다.</p>
+            </div>
+            <div className={styles.wrap_tab03}>
+              <ul>
+                <li>통합검색</li>
+                <li>아티스트</li>
+                <li>곡</li>
+                <li>앨범</li>
+                <li>영상</li>
+                <li>가사</li>
+                <li>DJ플레이리스트</li>
+                <li>멜론매거진</li>
+                <li>고객지원</li>
+              </ul>
+            </div>
+
+            <section className={styles.section}>
+              <h3>통합검색</h3>
+              {searchData && <div className={styles.wrap_cntt}>
+                {searchData.pagemap.cse_thumbnail &&
+                  <img src={searchData.pagemap.cse_thumbnail[0].src} alt="" />}
+                <div className={styles.atist_dtl_info}>
+                  <div className={styles.info_01}>
+                    <span className={styles.d_artist_list}>{searchData.title}</span>
+                  </div>
+                  <div className={styles.info_02}>
+                    <p>{searchData.snippet}</p>
+                  </div>
+                </div>
+              </div>}
+
+            </section>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
