@@ -4,8 +4,14 @@ import {useQuery} from "react-query";
 import {getSearch} from "../controllers/search"
 import Link from 'next/link'
 
-export default function SearchForm(){
-  const [searchText, setText] = useState<string>("");
+export default function SearchForm({param}: {
+  param?: string,
+}){
+  const [searchText, setText] = useState<string>(param || "");
+  useEffect(()=>{
+    setText(param)
+  }, [param]);
+  
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   }
