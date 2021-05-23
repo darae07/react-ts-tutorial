@@ -71,7 +71,7 @@ function SearchResult({ items, closeResult, searchText }: {
   return (
     <div className={styles.search_result} ref={show}>
       {items.map(item => (
-        <Link href={`search/${encodeURIComponent(searchText)}?cacheId=${encodeURIComponent(item.cacheId)}`} key={item.cacheId}>
+        <Link href={`/search/${encodeURIComponent(searchText)}?cacheId=${encodeURIComponent(item.cacheId)}`} key={item.cacheId}>
           <div className={styles.item}>
             <div className={styles.img_box}>
               {item.pagemap && item.pagemap.cse_thumbnail ?

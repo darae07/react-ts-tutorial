@@ -10,22 +10,41 @@ export default function Search(){
   const router = useRouter();
   const {param, cacheId} = router.query;
  
-  const searchQueryData = useQuery(['search', param], getSearch);
+  // const searchQueryData = useQuery(['search', param], getSearch);
 
-  const searchData = searchQueryData.data && searchQueryData.data.items ?
-    searchQueryData.data.items.find(item => item.cacheId === cacheId)
-    : null
+  // const searchData = searchQueryData.data && searchQueryData.data.items ?
+  //   searchQueryData.data.items.find(item => item.cacheId === cacheId)
+  //   : null
 
   return (
     <div>
       <header className={styles.header}>
+        <div className={styles.gnb}>
+          <div className={styles.gnb_mini_menu}>
+            <div className={styles.wrap_gnb_more}>
+              <ul>
+                <li>멜론차트</li>
+                <li>최신음악</li>
+                <li>장르음악</li>
+                <li>멜론DJ</li>
+                <li>멜론TV</li>
+                <li>스타포스트</li>
+                <li>매거진</li>
+                <li>마이뮤직</li>
+              </ul>
+            </div>
+            <div className={styles.header_login}>
+              <span>로그인</span>
+            </div>
+          </div>
+        </div>
         <div className={styles.util_cont}>
           <Image
             src="/images/logo_melon142x99.png"
             height={99}
             width={142}
           />
-          <SearchForm param={typeof param === 'string' ? param : ''} />
+          {/* <SearchForm param={typeof param === 'string' ? param : ''} /> */}
         </div>
       </header>
 

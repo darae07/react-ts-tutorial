@@ -13,3 +13,43 @@
   margin: 0 auto;
   display: flex;
 }
+
+.gnb{
+  height: 35px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.gnb_mini_menu {
+  left: 20px;
+  width: 1008px;
+  height: 35px;
+  padding: 0;
+  justify-content: space-between;
+  display: flex;
+  margin: 0 auto;
+}
+.wrap_gnb_more {
+  float: left;
+  width: 735px;
+}
+.gnb_mini_menu ul{
+  display: flex;
+}
+.gnb_mini_menu ul li {
+  margin: 0;
+  padding: 0 9px 0 10px;
+  background: url(//cdnimg.melon.co.kr/resource/image/web/common/bl_gnb_mini.jpg) no-repeat left 13px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 13px;
+  color: #52565d;
+}
+.gnb_mini_menu ul li:first-child {
+  padding-left: 0;
+  padding-right: 8px;
+  margin: 0;
+  background: none;
+}
+.header_login{
+  color: #31cb84;
+  border-bottom: 1px solid  #31cb84;
+}
