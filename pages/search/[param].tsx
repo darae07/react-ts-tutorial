@@ -5,16 +5,14 @@ import {getSearch} from "controllers/search";
 import SearchForm from "components/searchForm";
 import Image from 'next/image';
 import styles from "./[param].module.css";
+import Link from 'next/link'
+import All from "./all";
+import queryString from "query-string";
 
 export default function Search(){
   const router = useRouter();
-  const {param, cacheId} = router.query;
- 
-  const searchQueryData = useQuery(['search', param], getSearch);
-
-  const searchData = searchQueryData.data && searchQueryData.data.items ?
-    searchQueryData.data.items.find(item => item.cacheId === cacheId)
-    : null
+  const {param, cacheId, tab} = router.query;
+  const {asPath} = router;
 
   return (
     <div>
@@ -56,32 +54,20 @@ export default function Search(){
             </div>
             <div className={styles.wrap_tab03}>
               <ul>
-                <li>통합검색</li>
-                <li>아티스트</li>
-                <li>곡</li>
-                <li>앨범</li>
-                <li>영상</li>
-                <li>가사</li>
-                <li>DJ플레이리스트</li>
-                <li>멜론매거진</li>
-                <li>고객지원</li>
+                <li className={tab === 'all' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'all' } })}>통합검색</a></li>
+                <li className={tab === 'artist' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'artist' } })}>아티스트</a></li>
+                <li className={tab === 'song' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'song' } })}>곡</a></li>
+                <li className={tab === 'album' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'album' } })}>앨범</a></li>
+                <li className={tab === 'video' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'video' } })}>영상</a></li>
+                <li className={tab === 'lyric' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'lyric' } })}>가사</a></li>
+                <li className={tab === 'dj' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'dj' } })}>DJ플레이리스트</a></li>
+                <li className={tab === 'mag' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'mag' } })}>멜론매거진</a></li>
+                <li className={tab === 'cs' ? styles.on : ''}><a href={queryString.stringifyUrl({ url: asPath, query: { tab: 'cs' } })}>고객지원</a></li>
               </ul>
             </div>
 
             <section className={styles.section}>
-              <h3>통합검색</h3>
-              {searchData && <div className={styles.wrap_cntt}>
-                {searchData.pagemap.cse_thumbnail &&
-                  <img src={searchData.pagemap.cse_thumbnail[0].src} alt="" />}
-                <div className={styles.atist_dtl_info}>
-                  <div className={styles.info_01}>
-                    <span className={styles.d_artist_list}>{searchData.title}</span>
-                  </div>
-                  <div className={styles.info_02}>
-                    <p>{searchData.snippet}</p>
-                  </div>
-                </div>
-              </div>}
+             {tab === "all" && <All/>}
 
             </section>
           </div>
