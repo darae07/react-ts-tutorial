@@ -72,7 +72,7 @@ function SearchResult({ items, closeResult, searchText }: {
   return (
     <div className={styles.search_result} ref={show}>
       {items.map(item => (
-        <Link href={`/search/${encodeURIComponent(searchText)}?cacheId=${encodeURIComponent(item.cacheId)}`} 
+        <Link href={`/search/${encodeURIComponent(searchText)}?cacheId=${encodeURIComponent(item.cacheId)}&tab=all`} 
         key={item.cacheId}>
           <div className={styles.item} onClick={closeResult}>
             <div className={styles.img_box}>

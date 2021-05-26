@@ -106,6 +106,16 @@
 .wrap_tab03 ul li:first{
   width: 11.2%;
 }
+.wrap_tab03 ul li.on{
+  margin-bottom: -1px;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    color: #6ea300;
+    font-weight: bold;
+}
+.wrap_tab03 ul li.on a{
+  color: #6ea300;
+}
 .wrap_cntt {
   padding: 16px 0 0;
   border-top: 1px solid #ccc;
