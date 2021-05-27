@@ -24,7 +24,7 @@ export default function SearchForm({param}: {
     <div>
       <div className={styles.search}>
         <input className={styles.search_input}
-          value={searchText}
+          value={searchText || ""}
           onChange={onChange}
           onClick={() => setSearchResultOpen(true)}
         />
@@ -71,9 +71,9 @@ function SearchResult({ items, closeResult, searchText }: {
 
   return (
     <div className={styles.search_result} ref={show}>
-      {items.map(item => (
+      {items.map((item, i) => (
         <Link href={`/search/${encodeURIComponent(searchText)}?cacheId=${encodeURIComponent(item.cacheId)}&tab=all`} 
-        key={item.cacheId}>
+        key={item.cacheId + i}>
           <div className={styles.item} onClick={closeResult}>
             <div className={styles.img_box}>
               {item.pagemap && item.pagemap.cse_thumbnail ?

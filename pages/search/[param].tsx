@@ -37,11 +37,13 @@ export default function Search(){
           </div>
         </div>
         <div className={styles.util_cont}>
-          <Image
-            src="/images/logo_melon142x99.png"
-            height={99}
-            width={142}
-          />
+          <Link href="/">
+            <Image
+              src="/images/logo_melon142x99.png"
+              height={99}
+              width={142}
+            />
+          </Link>
           <SearchForm param={typeof param === 'string' ? param : ''} />
         </div>
       </header>
