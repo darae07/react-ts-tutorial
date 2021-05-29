@@ -9,7 +9,7 @@ import { GetStaticProps } from 'next'
 import { QueryClient, useQuery } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import { getPosts } from "../controllers/posts";
-import {NewAlbum, Events, LoginWrap} from "../components/main";
+import {NewAlbum, Events, LoginWrap, HotIssue, Chart} from "../components/main";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false; /* eslint-disable import/first */
@@ -28,17 +28,9 @@ export default function Home({history}) {
         <NewAlbum/>
         <Events/>
         <LoginWrap/>
+        <HotIssue/>
+        <Chart/>
         </div>
-        {/* {data.posts && data.posts.map(post => <Link href={`posts/${encodeURIComponent(post.postKey)}`} key={post.postKey}>
-          <div className={utilStyles.post}>
-          <p className={utilStyles.username}>{post.user.userName}</p>
-          {post.contents && post.contents.map(content => {
-            if (content.contentType === 1) {
-              return <p key={content.contentKey}>{content.contentText}</p>
-            }
-          })}
-          </div>
-        </Link>)} */}
       </section>
     </Layout>
   )
