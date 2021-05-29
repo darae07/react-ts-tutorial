@@ -8,6 +8,10 @@ const today = () => {
   const y = d.getFullYear();
   const m = d.getMonth()+1;
   const dd = d.getDate();
+  const hour = d.getHours();
+  if(hour < 9){
+    return `${y}-${formatter(m)}-${formatter(dd-1)}`
+  }
   return `${y}-${formatter(m)}-${formatter(dd)}`
 }
 const options = {
@@ -21,14 +25,14 @@ const options = {
 };
 
 export function getBillboardChart(){
-  axios.request(options).then(function (response) {
-    console.log(response.data);
-  }).catch(function (error) {
+  return axios.request(options)
+  .then(res=>res.data)
+  .catch(function (error) {
     console.error(error);
   });
 }
 
-export const data = {
+export const dataSnipet = {
   content: [
     {
       artist: "Olivia Rodrigo",
