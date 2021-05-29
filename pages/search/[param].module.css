@@ -13,6 +13,9 @@
   margin: 0 auto;
   display: flex;
 }
+.logo{
+  height: 100%;
+}
 
 .gnb{
   height: 35px;

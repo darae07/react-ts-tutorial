@@ -10,6 +10,9 @@ import { QueryClient, useQuery } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import { getPosts } from "../controllers/posts";
 import {NewAlbum, Events, LoginWrap} from "../components/main";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; /* eslint-disable import/first */
 
 export default function Home({history}) {
   // const { data } = useQuery('posts', getPosts)
