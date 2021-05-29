@@ -8,9 +8,10 @@ import SearchForm from "./searchForm"
 const name = '멜론 클론코딩'
 export const siteTitle = '멜론 클론코딩'
 
-export default function Layout({ children, home }: {
-  children: React.ReactNode
-  home?: boolean
+export default function Layout({ children, home, param }: {
+  children: React.ReactNode,
+  home?: boolean,
+  param?: string,
 }) {
   return (
     <div className={styles.container}>
@@ -48,8 +49,16 @@ export default function Layout({ children, home }: {
               </div>
             </div>
             <div className={styles.util_cont}>
-              <img src="/images/logo_melon142x99.png" alt="logo"/>
-              <SearchForm />
+              {!home ? (
+                <div>
+                  <Link href="/">
+                    <img src="/images/logo_melon142x99.png" alt="logo" />
+                  </Link>
+                </div>
+              ) :
+                <img src="/images/logo_melon142x99.png" alt="logo" />
+              }
+              <SearchForm param={param} />
               <div><span>급상승</span></div>
               <div><span>배너영역</span></div>
             </div>

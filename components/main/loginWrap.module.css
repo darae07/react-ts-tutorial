@@ -4,6 +4,7 @@
     height: 316px;
     display: inline-block;
     margin-top: 36px;
+    position: absolute;
 }
 .login_wrap {
     position: relative;

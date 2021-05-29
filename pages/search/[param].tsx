@@ -8,6 +8,7 @@ import styles from "./[param].module.css";
 import Link from 'next/link'
 import All from "./all";
 import queryString from "query-string";
+import Layout from "../../components/layout";
 
 export default function Search(){
   const router = useRouter();
@@ -15,35 +16,8 @@ export default function Search(){
   const {asPath} = router;
 
   return (
+    <Layout param={typeof param === "string" && param}>
     <div>
-      <header className={styles.header}>
-        <div className={styles.gnb}>
-          <div className={styles.gnb_mini_menu}>
-            <div className={styles.wrap_gnb_more}>
-              <ul>
-                <li>멜론차트</li>
-                <li>최신음악</li>
-                <li>장르음악</li>
-                <li>멜론DJ</li>
-                <li>멜론TV</li>
-                <li>스타포스트</li>
-                <li>매거진</li>
-                <li>마이뮤직</li>
-              </ul>
-            </div>
-            <div className={styles.header_login}>
-              <span>로그인</span>
-            </div>
-          </div>
-        </div>
-        <div className={styles.util_cont}>
-          <Link href="/">
-          <img src="/images/logo_melon142x99.png" alt="logo" className={styles.logo} />
-          </Link>
-          <SearchForm param={typeof param === 'string' ? param : ''} />
-        </div>
-      </header>
-
       <div className={styles.cont_wrap}>
         <div className={styles.conts_section}>
           <div className={styles.conts}>
@@ -72,6 +46,8 @@ export default function Search(){
         </div>
       </div>
     </div>
+  </Layout>
+
   )
 }
 
