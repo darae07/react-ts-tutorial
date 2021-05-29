@@ -48,11 +48,7 @@ export default function Layout({ children, home }: {
               </div>
             </div>
             <div className={styles.util_cont}>
-              <Image
-                src="/images/logo_melon142x99.png"
-                height={99}
-                width={142}
-              />
+              <img src="/images/logo_melon142x99.png" alt="logo"/>
               <SearchForm />
               <div><span>급상승</span></div>
               <div><span>배너영역</span></div>
