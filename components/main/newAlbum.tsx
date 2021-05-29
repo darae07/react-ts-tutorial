@@ -14,8 +14,8 @@ export function NewAlbum(){
           </ul>
           <span className={styles.num}>1/9</span>
           <span className={styles.icon}>
-            <a><i className="fas fa-angle-left"></i></a>
-            <a><i className="fas fa-angle-right"></i></a>
+            <a><i className="fas fa-angle-left fa-xs"></i></a>
+            <a><i className="fas fa-angle-right fa-xs"></i></a>
           </span>
         </div>
       </div>
