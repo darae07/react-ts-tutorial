@@ -9,10 +9,10 @@ const today = () => {
   const m = d.getMonth()+1;
   const dd = d.getDate();
   const hour = d.getHours();
-  if(hour < 9){
-    return `${y}-${formatter(m)}-${formatter(dd-1)}`
-  }
-  return `${y}-${formatter(m)}-${formatter(dd)}`
+  // if(hour < 9){
+  //   return `${y}-${formatter(m)}-${formatter(dd-1)}`
+  // }
+  return `${y}-${formatter(m)}-${formatter(dd-1)}`
 }
 const options = {
   method: 'GET',
