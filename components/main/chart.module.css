@@ -5,3 +5,72 @@
     height: 472px;
     margin-top: 32px;
 }
+.tab{
+    display: flex;
+}
+.tab .tab_item{
+    padding: 0 auto;
+    width: 33.333%;
+    text-align: center;
+    border: 1px solid #dde1e7;
+}
+.tab .tab_item:hover{
+    cursor: pointer;
+}
+.active{
+    border-top: 2px solid #8ac121 !important;
+    color: #8ac121;
+}
+.img_snipet{
+    background:  #dde1e7;
+    width: 48px;
+    height: 48px;
+}
+.chart_list{
+    border-left: 1px solid #e9edef;
+    border-right: 1px solid #e9edef;
+}
+.chart_list li{
+    display: flex;
+    border-bottom: 1px solid #e9edef;
+    padding: 8px 12px;
+    font-size: 12px;
+    
+}
+.chart_list li:nth-child(2n){
+    background-color: #f8f8f8;
+}
+.chart_list li div:first-child{
+    display: none;
+}
+.chart_list li div:last-child{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.chart_list .on{
+    padding: 11px 12px;
+    justify-content:flex-start;
+}
+.chart_list .on div:first-child{
+    display: block;
+    margin-right: 9px;
+}
+.chart_list .on div:last-child{
+    display: block;
+    padding-top: 5px;
+    max-width: 75%;
+}
+.chart_list .on div:last-child span{
+    display: block;
+    text-overflow: ellipsis;
+    height: 15px;
+    overflow: hidden;
+}
+.artist{
+    color: #1a1a1a;
+}
+.title{
+    font-weight: 300;
+    color: #777 ;
+}
