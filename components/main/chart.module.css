@@ -85,3 +85,26 @@
   color: #777;
   font-size: 12px;
 }
+.chart_btn_area{
+    border-bottom: 1px solid #dfe6e8;
+    padding: 6px 8px;
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+}
+.chart_btn_area span{
+    color: #777;
+    font-size: 12px;
+}
+.chart_btn_area button {
+    color: #555555;
+    padding: 4px 8px;
+    font-size: 12px;
+    background: #fcfcfc;
+    border: 1px solid #c5c5c5;
+    border-radius: 2px;
+}
+.chart_btn_area button span{
+    color: #8ac121;
+    margin-right: 2px;
+}
