@@ -20,7 +20,7 @@ export function Chart() {
 
   useEffect(()=>{
     getBillboardChart({page: 1}).then(data=>{
-      setContents(Object.values(data.content));
+      data && setContents(Object.values(data.content));
       const day = localStorage.getItem('chartDay');
       setChartDay(day);
     })
@@ -66,8 +66,8 @@ export function Chart() {
           <span>아티스트</span>
         </li>
       </ul>
-      <div>
-        {tab === 'pop' && <ul className={styles.chart_list}>
+      <div className={styles.chart_list}>
+        {tab === 'pop' && <ul >
           {contents.map((cont, i) => (
             <li className={cont.hover ? styles.on : ''}
               onMouseEnter={() => onHover(i)} key={i}>
@@ -78,6 +78,10 @@ export function Chart() {
               </div>
             </li>))}
         </ul>}
+        <div className={styles.chart_btn_area}>
+          <button><span><i className="fas fa-random"></i></span>셔플듣기</button>
+          <span>더보기 <i className="fas fa-angle-right"></i></span>
+        </div>
       </div>
     </div>
   )
