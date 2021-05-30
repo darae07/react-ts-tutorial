@@ -69,8 +69,8 @@ export function Chart() {
               onMouseEnter={() => onHover(i)} key={i}>
               <div className={styles.img_snipet}></div>
               <div>
-                <span className={styles.artist}>{cont.artist}</span>
                 <span className={styles.title}>{cont.title}</span>
+                <span className={styles.artist}>{cont.artist}</span>
               </div>
             </li>))}
         </ul>}

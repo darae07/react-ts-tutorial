@@ -48,6 +48,11 @@
     justify-content: space-between;
     width: 100%;
 }
+.chart_list div:last-child span{
+    text-overflow: ellipsis;
+    height: 15px;
+    overflow: hidden;
+}
 .chart_list .on{
     padding: 11px 12px;
     justify-content:flex-start;
@@ -63,14 +68,12 @@
 }
 .chart_list .on div:last-child span{
     display: block;
-    text-overflow: ellipsis;
-    height: 15px;
-    overflow: hidden;
 }
 .artist{
-    color: #1a1a1a;
-}
-.title{
     font-weight: 300;
     color: #777 ;
+}
+.title{
+    color: #1a1a1a;
+    min-width: 69%;
 }
