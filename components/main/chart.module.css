@@ -5,6 +5,9 @@
     height: 472px;
     margin-top: 32px;
 }
+.chart h2{
+    display: inline;
+}
 .tab{
     display: flex;
 }
@@ -76,4 +79,9 @@
 .title{
     color: #1a1a1a;
     min-width: 69%;
+}
+.chart_day{
+  float: right;
+  color: #777;
+  font-size: 12px;
 }
