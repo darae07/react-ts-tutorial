@@ -16,10 +16,13 @@ interface content {
 export function Chart() {
   const [contents, setContents] = useState<content[]>(dataSnipet.content);
   const [tab, setTab] = useState('pop');
+  const [chartDay, setChartDay] = useState('');
 
   useEffect(()=>{
-    getBillboardChart().then(data=>{
+    getBillboardChart({page: 1}).then(data=>{
       setContents(Object.values(data.content));
+      const day = localStorage.getItem('chartDay');
+      setChartDay(day);
     })
   }, []);
 
@@ -48,6 +51,7 @@ export function Chart() {
   return (
     <div className={styles.chart}>
       <h2>멜론 차트</h2>
+      <span className={styles.chart_day}>{chartDay} 기준</span>
       <ul className={styles.tab}>
         <li className={`${styles.tab_item} ${tab === '24hits' && styles.active}`}
           onClick={() => toggleTab('24hits')}>
